@@ -1,108 +1,177 @@
 const baseSlides = [
   {
-    title: "Vad är AI – enkelt förklarat",
+    key: "intro-ai",
+    app: "AI-grund",
+    icon: "🧠",
+    title: "1. Vad AI är – och inte är",
     intro:
-      "AI (artificiell intelligens) är system som kan känna igen mönster, sammanfatta information och föreslå nästa steg. Copilot i M365 använder AI för att hjälpa dig direkt i de verktyg du redan använder på jobbet.",
+      "Starta med en enkel bild: AI hjälper oss upptäcka mönster, sammanfatta och skapa utkast. Det ersätter inte expertisen i teamet utan förstärker den.",
     points: [
-      { title: "Inte magi", text: "AI gissar nästa bästa svar baserat på data och språkmodeller." },
-      { title: "Människa + AI", text: "Du styr målet, AI hjälper med fart, struktur och idéer." },
-      { title: "Trygg användning", text: "Datahantering följer Microsoft 365:s säkerhetsramar i organisationen." },
+      { title: "Mönsterigenkänning", text: "AI hittar samband i text, siffror och historik snabbare än manuellt arbete." },
+      { title: "Människa i kontroll", text: "Du sätter mål, tone-of-voice och godkänner innan något delas vidare." },
+      { title: "Från idé till utkast", text: "Använd AI för första versionen, inte för sista ordet." },
     ],
     examples: [
-      ["Exempel", "Sammanfatta 20 sidor mötesanteckningar till 5 beslutspunkter."],
-      ["Exempel", "Skapa första utkast till veckobrev utifrån senaste Teams-mötet."],
+      ["Exempel", "Sammanfatta ett 60-minuters möte till 5 beslut och 3 actions."],
+      ["Prata om", "Skillnaden mellan automatisering och klok assistans."],
+    ],
+    talkTrack: "Tryck på att Copilot ger tempo i vardagen – men kvalitetssäkring ligger alltid hos oss.",
+    metrics: [
+      { label: "Tid till utkast", value: "-40%" },
+      { label: "Beslutsfokus", value: "+mer" },
     ],
   },
   {
-    title: "Promptar som fungerar",
+    key: "prompt",
+    app: "Promptdesign",
+    icon: "✨",
+    title: "2. Promptar som ger bra resultat",
     intro:
-      "En prompt är en tydlig instruktion till Copilot. Ju mer tydlighet om mål, målgrupp och format, desto bättre resultat.",
+      "En bra prompt gör Copilot relevant. Ge roll, mål, kontext och format så blir resultatet tydligare direkt.",
     points: [
-      { title: "Bra struktur", text: "Roll + uppgift + kontext + format + ton." },
-      { title: "Iterera", text: "Be om förbättringar: kortare, mer konkret, med exempel." },
-      { title: "Kvalitetssäkra", text: "Kontrollera fakta och anpassa innan du skickar vidare." },
+      { title: "R-A-M-F-modell", text: "Roll, Aktivitet, Målgrupp, Format – en enkel modell som funkar i alla appar." },
+      { title: "Förfina i två steg", text: "Börja med ett utkast och be sedan om förbättring: kortare, skarpare, mer konkret." },
+      { title: "Kvalitetssäkra", text: "Kontrollera fakta, siffror och känslig information innan publicering." },
     ],
     examples: [
-      [
-        "Promptmall",
-        "Agera projektledare. Sammanfatta tråden i 6 punkter, markera risker och föreslå nästa steg i tabellformat.",
-      ],
-      ["Tips", "Lägg till: målgrupp, längd (t.ex. max 150 ord), språk och tonalitet."],
+      ["Prompt", "Agera projektledare. Ge status i 6 punkter med risker och nästa steg i tabell."],
+      ["Tips", "Lägg till målgrupp, ordgräns och ton: t.ex. professionell och handlingsorienterad."],
+    ],
+    talkTrack: "Visa gärna samma prompt i två varianter för att illustrera hur kvaliteten lyfter.",
+    metrics: [
+      { label: "Färre omtag", value: "2x" },
+      { label: "Tydlighet", value: "Hög" },
     ],
   },
   {
-    title: "Vad är Copilot i Microsoft 365?",
+    key: "overview",
+    app: "M365 Copilot",
+    icon: "🛰️",
+    title: "3. Hur Copilot hänger ihop i M365",
     intro:
-      "Copilot är en AI-assistent integrerad i M365-appar. Den kombinerar språkmodell + arbetsdata (behörighetsstyrt) för att hjälpa dig skriva, analysera och kommunicera snabbare.",
+      "Copilot jobbar i dina vanliga verktyg och använder behörighetsstyrd data från Microsoft Graph. Det gör att svar blir relevanta för varje roll.",
     points: [
-      { title: "Jobbar i dina appar", text: "Word, PowerPoint, Excel, Outlook, Teams och fler." },
-      { title: "Bygger på Microsoft Graph", text: "Kopplar samman möten, mejl, filer och kalender (enligt behörighet)." },
-      { title: "Ökar produktivitet", text: "Mindre tid på första utkast, mer tid på kvalitet och beslut." },
+      { title: "I dina dagliga appar", text: "Word, Excel, PowerPoint, Outlook, Teams, OneNote och Loop." },
+      { title: "En sammanhängande kontext", text: "Möten, mejl, filer och kalender länkas ihop för att ge bättre svar." },
+      { title: "Säkerhetsramar", text: "Copilot respekterar samma rättigheter som användaren redan har." },
     ],
-    examples: [["Mål", "Använd Copilot som stöd för första versionen – du gör sista redigeringen."]],
+    examples: [["Budskap", "Rätt person får rätt AI-stöd utifrån samma behörigheter som i M365."]],
+    talkTrack: "Det här är en bra slide för att skapa trygghet innan du visar skarpa exempel.",
+    metrics: [
+      { label: "Appar i flöde", value: "7+" },
+      { label: "Datakällor", value: "Graph" },
+    ],
   },
 ];
 
 const appSlides = [
   {
-    title: "Copilot i Word",
-    intro: "Skapa, förbättra och sammanfatta dokument med tydlig struktur.",
+    key: "word",
+    app: "Word",
+    icon: "📝",
+    title: "4. Word – från blankt dokument till beslut",
+    intro: "Word med Copilot är perfekt för policyer, beslutsunderlag och intern kommunikation.",
     points: [
-      { title: "Starta från idé", text: "Be om ett utkast med rubriker, syfte och rekommendation." },
-      { title: "Förbättra text", text: "Skriv om för kortare språk, bättre ton eller tydligare budskap." },
-      { title: "Snabb sammanfattning", text: "Hämta huvudbudskap och åtgärdspunkter ur långa dokument." },
+      { title: "Starta snabbt", text: "Skapa utkast med rubriker, syfte och rekommendation på sekunder." },
+      { title: "Förbättra språk", text: "Gör text kortare, tydligare eller mer målgruppsanpassad." },
+      { title: "Sammanfatta långt", text: "Plocka ut huvudbudskap och åtgärder ur stora dokument." },
     ],
-    examples: [["Exempel", "Gör om denna policytext till en version för medarbetare på max 250 ord."]],
+    examples: [["Exempel", "Skriv om denna policy till en lättläst version för hela organisationen, max 250 ord."]],
+    talkTrack: "Betona att Copilot gör första 70 %, men människa säkrar de viktiga 30 %.",
+    metrics: [
+      { label: "Dokumenttempo", value: "Snabbt" },
+      { label: "Klarhet", value: "+" },
+    ],
   },
   {
-    title: "Copilot i PowerPoint",
-    intro: "Bygg presentationer snabbare från dokument, punkter eller agenda.",
+    key: "ppt",
+    app: "PowerPoint",
+    icon: "🎯",
+    title: "5. PowerPoint – bygg en berättelse snabbare",
+    intro: "Skapa en tydlig presentation från dokument, agenda eller några rader text.",
     points: [
-      { title: "Skapa slide-utkast", text: "Generera en första presentation med logisk berättelse." },
-      { title: "Förfina innehåll", text: "Kortare bullets, tydligare rubriker, bättre flöde mellan sidor." },
-      { title: "Talarstöd", text: "Få förslag på speaker notes och övergångar." },
+      { title: "Slide-utkast", text: "Generera en första storyline med logisk struktur." },
+      { title: "Förfina budskap", text: "Kortare bullets, tydligare rubriker och bättre övergångar." },
+      { title: "Presenterstöd", text: "Få förslag på speaker notes när du övar inför mötet." },
     ],
-    examples: [["Exempel", "Skapa en 8-slides onboardingpresentation för nya medarbetare."]],
+    examples: [["Exempel", "Skapa 8 slides för onboarding med mål, risker och nästa steg."]],
+    talkTrack: "Perfekt när du snabbt behöver gå från rådata till något som går att presentera.",
+    metrics: [
+      { label: "Tid till deck", value: "-50%" },
+      { label: "Flöde", value: "Tydligt" },
+    ],
   },
   {
-    title: "Copilot i Excel",
-    intro: "Analysera data, hitta avvikelser och skapa enkla visualiseringar.",
+    key: "excel",
+    app: "Excel",
+    icon: "📊",
+    title: "6. Excel – snabb analys utan komplexa formler",
+    intro: "Ställ frågor i naturligt språk och få analys, trender och visualiseringar.",
     points: [
-      { title: "Ställ frågor i naturligt språk", text: "Be om trender per månad, region eller team." },
-      { title: "Snabb analys", text: "Identifiera toppar, bottnar och möjliga orsaker." },
-      { title: "Formelförslag", text: "Få hjälp med relevanta formler och tabellstruktur." },
+      { title: "Fråga direkt", text: "Visa trender per månad, region eller kundsegment." },
+      { title: "Hitta avvikelser", text: "Identifiera toppar och bottnar med möjliga orsaker." },
+      { title: "Formelassistans", text: "Få förslag på formler och struktur när datan växer." },
     ],
-    examples: [["Exempel", "Visa vilka tre kundsegment som vuxit mest senaste kvartalet."]],
+    examples: [["Exempel", "Vilka tre kundsegment växte mest senaste kvartalet och varför?"]],
+    talkTrack: "Bra för ledningsdialog: från tabell till insikt på några sekunder.",
+    metrics: [
+      { label: "Analystid", value: "-35%" },
+      { label: "Insikter", value: "+snabbt" },
+    ],
   },
   {
-    title: "Copilot i Outlook",
-    intro: "Hantera mejlflödet snabbare med sammanfattningar och svarsförslag.",
+    key: "outlook",
+    app: "Outlook",
+    icon: "📬",
+    title: "7. Outlook – få kontroll på mejlflödet",
+    intro: "Copilot hjälper dig sammanfatta trådar, prioritera och skriva svar med rätt ton.",
     points: [
-      { title: "Sammanfatta trådar", text: "Få lägesbild: beslut, frågor och nästa steg." },
-      { title: "Skriv svar", text: "Välj ton: vänlig, direkt, formell eller handlingsorienterad." },
-      { title: "Prioritera", text: "Fokusera på meddelanden som kräver agerande först." },
+      { title: "Lägesbild på sekunder", text: "Få beslut, frågor och nästa steg från långa trådar." },
+      { title: "Svara smartare", text: "Skapa svar med rätt tonalitet beroende på mottagare." },
+      { title: "Prioritera rätt", text: "Lägg fokus på mejl som kräver handling först." },
     ],
-    examples: [["Exempel", "Skriv ett svar som bekräftar leveransplan och ber om saknade underlag."]],
+    examples: [["Exempel", "Skriv svar som bekräftar leveransplan och efterfrågar saknade underlag."]],
+    talkTrack: "Detta är ofta den snabbaste wow-demonstrationen i vardagsarbete.",
+    metrics: [
+      { label: "Svarstid", value: "-30%" },
+      { label: "Fokus", value: "Bättre" },
+    ],
   },
   {
-    title: "Copilot i Teams",
-    intro: "Få stöd före, under och efter möten.",
+    key: "teams",
+    app: "Teams",
+    icon: "🎙️",
+    title: "8. Teams – bättre möten före, under och efter",
+    intro: "Copilot fångar beslut, action points och hjälper teamet att hålla riktning.",
     points: [
-      { title: "Mötesöversikt", text: "Sammanfattning av vad som beslutats och av vem." },
-      { title: "Fråga under mötet", text: "Be om förtydliganden utan att avbryta flödet." },
-      { title: "Efterarbete", text: "Generera uppföljningsmeddelande och ansvarsfördelning." },
+      { title: "Inför mötet", text: "Skapa agenda och syfte utifrån tidigare trådar." },
+      { title: "Under mötet", text: "Ställ frågor om vad som beslutats utan att tappa tempo." },
+      { title: "Efter mötet", text: "Generera uppföljning med ansvar och deadlines." },
     ],
-    examples: [["Exempel", "Lista öppna frågor från mötet och föreslå ansvarig person."]],
+    examples: [["Exempel", "Lista öppna frågor och föreslå ansvarig person per punkt."]],
+    talkTrack: "Framhäv hur möten blir kortare men mer beslutstunga.",
+    metrics: [
+      { label: "Mötestid", value: "-20%" },
+      { label: "Uppföljning", value: "Klar" },
+    ],
   },
   {
-    title: "Copilot i OneNote och Loop",
-    intro: "Samla idéer, strukturera anteckningar och samarbeta i realtid.",
+    key: "notes-loop",
+    app: "OneNote & Loop",
+    icon: "🔄",
+    title: "9. OneNote & Loop – från idé till gemensam handling",
+    intro: "Strukturera anteckningar och bygg en levande arbetsyta där teamet jobbar vidare.",
     points: [
-      { title: "OneNote", text: "Sammanfatta långa anteckningar till konkreta åtgärder." },
-      { title: "Loop", text: "Skapa delade arbetsytor med förslag på nästa aktiviteter." },
-      { title: "Kunskapsdelning", text: "Gör teamets kunskap lättare att återanvända." },
+      { title: "OneNote", text: "Förvandla långa anteckningar till tydliga actions." },
+      { title: "Loop", text: "Skapa delade komponenter som uppdateras i realtid." },
+      { title: "Kunskap som lever", text: "Gör teamets lärdomar återanvändbara över tid." },
     ],
-    examples: [["Exempel", "Förvandla workshopanteckningar till en tydlig handlingsplan."]],
+    examples: [["Exempel", "Gör om workshopanteckningar till en prioriterad handlingsplan för nästa sprint."]],
+    talkTrack: "En bra avslutning: visa att Copilot hjälper både individ och team i samma flöde.",
+    metrics: [
+      { label: "Samarbete", value: "Smidigt" },
+      { label: "Idé→Plan", value: "Snabb" },
+    ],
   },
 ];
 
@@ -110,28 +179,28 @@ const teamCustomizations = {
   general: {
     heading: "Generell introduktion",
     tags: ["Alla team", "Grundnivå", "Produktivitet"],
-    note: "Bra start för hela organisationen."
+    note: "En enkel berättelse från AI-grund till praktisk nytta i varje app.",
   },
   sales: {
     heading: "Anpassning för säljteam",
     tags: ["Prospektering", "Kundmejl", "Offertunderlag"],
-    note: "Fokusera på snabbare kundkommunikation och bättre pipeline-översikt."
+    note: "Lyft Outlook, Teams och PowerPoint extra för snabbare kunddialog och skarpare erbjudanden.",
   },
   hr: {
     heading: "Anpassning för HR-team",
     tags: ["Policyutkast", "Intervjuer", "Intern kommunikation"],
-    note: "Fokusera på tydlig kommunikation, onboarding och medarbetarstöd."
+    note: "Fokusera på Word, Teams och OneNote för tydlig kommunikation och bättre medarbetarstöd.",
   },
   leadership: {
     heading: "Anpassning för ledningsgrupp",
     tags: ["Beslutsunderlag", "Statusrapporter", "Strategi"],
-    note: "Fokusera på snabba sammanfattningar och beslutsförberedelser."
+    note: "Fokusera på sammanfattningar, riskbild och beslutspunkter i varje del.",
   },
   it: {
     heading: "Anpassning för IT och support",
     tags: ["Incidentrapporter", "Kunskapsartiklar", "Supportsvar"],
-    note: "Fokusera på standardiserade svar och tydliga felsökningsflöden."
-  }
+    note: "Lägg tyngd på Excel, Outlook och Loop för snabbare analys och mer konsekvent supportflöde.",
+  },
 };
 
 const slideList = document.querySelector("#slideList");
@@ -148,7 +217,7 @@ function renderMenu() {
   slideList.innerHTML = "";
   slides.forEach((slide, index) => {
     const li = document.createElement("li");
-    li.textContent = slide.title;
+    li.textContent = `${slide.icon} ${slide.title}`;
     li.className = index === currentIndex ? "active" : "";
     li.addEventListener("click", () => {
       currentIndex = index;
@@ -164,8 +233,26 @@ function renderSlide() {
   const slide = slides[currentIndex];
 
   slideCard.innerHTML = `
+    <div class="slide-hero">
+      <div>
+        <p class="app-badge">${slide.icon} ${slide.app}</p>
+        <h2>${slide.title}</h2>
+      </div>
+      <div class="hero-metrics">
+        ${slide.metrics
+          .map(
+            (metric) => `
+          <div class="metric">
+            <strong>${metric.value}</strong>
+            <span>${metric.label}</span>
+          </div>
+        `
+          )
+          .join("")}
+      </div>
+    </div>
+
     <p class="tag">${team.heading}</p>
-    <h2>${slide.title}</h2>
     <p>${slide.intro}</p>
 
     <div>
@@ -179,7 +266,7 @@ function renderSlide() {
         .map(
           (point) => `
         <article class="fact">
-          <h3>${point.title}</h3>
+          <h3><span>${slide.icon}</span>${point.title}</h3>
           <p>${point.text}</p>
         </article>
       `
@@ -190,11 +277,11 @@ function renderSlide() {
     <h3>Praktiska exempel</h3>
     <ul class="examples">
       ${slide.examples
-        .map(
-          (example) => `<li><strong>${example[0]}:</strong> ${example[1]}</li>`
-        )
+        .map((example) => `<li><strong>${example[0]}:</strong> ${example[1]}</li>`)
         .join("")}
     </ul>
+
+    <p class="presenter-tip"><strong>Presentatörstips:</strong> ${slide.talkTrack}</p>
   `;
 
   slideCounter.textContent = `Sida ${currentIndex + 1} av ${slides.length}`;
