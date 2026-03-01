@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copilot för M365 – utbildningsportal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Utbildningsportal</p>
+        <h1>Copilot i Microsoft 365 på jobbet</h1>
+      </div>
+      <div class="topbar-actions">
+        <label for="teamSelect">Anpassa för team:</label>
+        <select id="teamSelect" aria-label="Välj team">
+          <option value="general">Generell introduktion</option>
+          <option value="sales">Säljteam</option>
+          <option value="hr">HR-team</option>
+          <option value="leadership">Ledningsgrupp</option>
+          <option value="it">IT och support</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <aside class="slide-menu" aria-label="Navigering mellan sidor">
+        <ol id="slideList"></ol>
+      </aside>
+
+      <section class="slide-stage">
+        <article id="slide" class="slide-card" aria-live="polite"></article>
+
+        <nav class="controls" aria-label="Bildspelskontroller">
+          <button id="prevBtn" type="button">← Föregående</button>
+          <p id="slideCounter"></p>
+          <button id="nextBtn" type="button">Nästa →</button>
+        </nav>
+      </section>
+    </main>
+
+    <template id="exampleTemplate">
+      <li>
+        <h4></h4>
+        <p></p>
+      </li>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
